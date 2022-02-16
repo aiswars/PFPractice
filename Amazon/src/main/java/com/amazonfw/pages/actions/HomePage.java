@@ -22,9 +22,18 @@ public HomePageLocators home;
 		
 	}
 	
-	public void gotoSignIn() {
+	public void SearchingAnItem() {
+		
+		home.txtSearchBox.sendKeys("7yr old toys");
+		home.btnSearchSubmit.click();
+		
+	}
+	
+	public SigninPage gotoSignIn() {
 		
 	    home.lnkSignIn.click();
+	    
+	    return new SigninPage(); //create object of SigninpAge - consructor is called
 	
 	}
 	public void gotoHelloLocation() {

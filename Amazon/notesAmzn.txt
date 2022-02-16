@@ -99,7 +99,7 @@ AmazonTest.java & HomePage.java, HomePageLocators.java executed >> Run as Java A
 	driver.get("https://www.amazon.com/");
 	System.out.println("hello");
 	}
-above code in AmazonTest.java changed to 
+above code in AmazonTest.java changed to below code // lect 113 added // Added searchbox click in HomePage
 	
 		BasePage.initConfiguration();
 		HomePage home = new HomePage();
@@ -150,3 +150,40 @@ LoginTest class>> Page.menu.gotoAccounts(); //will look in TopMenu Page for goto
 
 TopNavogationLocators -- add locators
 TopNavigation- add methods 
+----------------------------------------------
+lect 113
+Signinpage and SigninPageLocators
+add locators of elements in siginpage to signinpageLocators class
+and same way as above for Homepage - create construcotor in signinPage and create object for signinpageLocators and iniliaze PF in signinPage.
+In Page Class :
+1. constructor of the class
+2. Object for the locators class
+3. PageFactoryInitElements() method
+4. extends BasePage class for the same driver instance from the base class.
+
+signinTest class - indepenedant test
+public class SgninTest {
+
+	public static void main(String[] args) {
+		
+		BasePage.initConfiguration();
+		HomePage home = new HomePage();
+		SigninPage signin =  home.gotoSignIn(); //gototSignin responsible for taking to Signinpage , hence return type is SigninPage in gotoSignin method. signinPage ref is given here for the object creation of signinPage receiving the returned object from gotoSignin mehtos
+		signin.doSignIn();
+		System.out.println("SearchingAnItem done");
+		BasePage.quitBrowser();
+	}
+
+1. initConfigurayion is called >> driver instance created, website opned..
+2. HomePage object created and accessed the gotoSignin method
+3. gototSignin responsible for taking to Signinpage , hence return type is SigninPage in gotoSignin method.
+4. signinPage ref is given here for the object creation of signinPage receiving the returned object from gotoSignin mehtod.
+5. in signinPage class>> when the signinPage Object is created the constructor is called and PFinintlazation is done, and then the signinPageLocators object is 
+ created and the elemnets are accssible using this object
+	
+
+Added searchbox click in HomePage
+
+
+----------------------------------------------------------------
+lec 114

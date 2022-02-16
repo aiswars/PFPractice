@@ -20,7 +20,7 @@ public TopNavigation(WebDriver driver){
 	
 public void gotoAll(){
 		
-	
+	topMenu.lnkAll.click();
 		
 	}
 public void gottoBestSellers(){
