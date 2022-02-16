@@ -187,3 +187,21 @@ Added searchbox click in HomePage
 
 ----------------------------------------------------------------
 lec 114
+
+convert the tests in rough pkg to testng tests in testcases - copy the class files and paste in testcases pkg.
+testngxml file - pass the tests to the testng xml file
+COnvert Project > TestNg> COnvert to TestNg -- add the testNgxml file to runner folder in src/test/resources
+Need to add the listeners in tetsng xml file - may be later
+
+   <listeners>
+		<listener class-name="com.w2a.listeners.CustomListeners" />
+		<listener class-name="com.w2a.errorcollectors.TestListenerAdapter" />
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+	</listeners>
+
+
+----------------------------------------------------------------------
+lec 115
+
+
