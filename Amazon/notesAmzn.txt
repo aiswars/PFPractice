@@ -196,18 +196,30 @@ convert the tests in rough pkg to testng tests in testcases - copy the class fil
 testngxml file - pass the tests to the testng xml file
 COnvert Project > TestNg> COnvert to TestNg -- add the testNgxml file to runner folder in src/test/resources
 Add the testcases classes <test><class> in tetsngxml file
-Run As TestNg Suite
+
+Run As TestNg Suite - no errors - both tests run successfully
+Refresh testuotput folder to check the reports - check >> index.html and emailablereport.html in testoutput folder
+also testwise html files in Suite folder - AmazonSuiteFolder/HomeSearchTest.html and SigninTest.html
 -----------------------------------------------------------------------------------------------------
-
-Need to add the listeners in tetsng xml file - may be later
-
-   <listeners>
+ Need to add the listeners 
+ 
+ <listeners>
 		<listener class-name="com.w2a.listeners.CustomListeners" />
 		<listener class-name="com.w2a.errorcollectors.TestListenerAdapter" />
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
 		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 	</listeners>
+	
+Need to add the listeners in tetsng xml file -
+added 
 
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+		
+Run As TestNg Suite - no errors - both tests run successfully
+Refresh testuotput folder to check the reports - html folder added- check >> index.html in html folder
+  
+added scrrenshots(manually created and added to understand)of the reports in rough pkg >>rough/file/...
 
 ----------------------------------------------------------------------
 lec 115
