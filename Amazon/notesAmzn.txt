@@ -106,6 +106,8 @@ above code in AmazonTest.java changed to below code // lect 113 added // Added s
 		home.gotoSignIn();			
 		System.out.println("done");
 		BasePage.quitBrowser();
+		
+		AmazonTest - Run As JavaApplication 
 ---------------------------------------------------------------------------
 lec 111
 		AjaxElementLocatorFactory factory = new AjaxElementLocatorFactory(driver,10); //a lazy load concept in PF design to identify webeelements only when they are in any oprerations
@@ -182,7 +184,9 @@ public class SgninTest {
  created and the elemnets are accssible using this object
 	
 
-Added searchbox click in HomePage
+SgninTest - Run As JavaApplication
+
+Added searchbox click in HomePage  //AmazonTest >>HomeSearchTest.java in testcases pkg
 
 
 ----------------------------------------------------------------
@@ -191,6 +195,10 @@ lec 114
 convert the tests in rough pkg to testng tests in testcases - copy the class files and paste in testcases pkg.
 testngxml file - pass the tests to the testng xml file
 COnvert Project > TestNg> COnvert to TestNg -- add the testNgxml file to runner folder in src/test/resources
+Add the testcases classes <test><class> in tetsngxml file
+Run As TestNg Suite
+-----------------------------------------------------------------------------------------------------
+
 Need to add the listeners in tetsng xml file - may be later
 
    <listeners>
