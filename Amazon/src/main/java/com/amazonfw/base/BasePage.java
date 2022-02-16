@@ -11,6 +11,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.amazonfw.pages.actions.TopNavigation;
 import com.amazonfw.utilities.ExcelReader;
 import com.amazonfw.utilities.ExtentManager;
 import com.aventstack.extentreports.ExtentReports;
@@ -36,6 +37,8 @@ public class BasePage {
 	//public ExtentReports rep = ExtentManager.createInstance();
 	public static ExtentTest test;
 	public static String browser;
+	public static TopNavigation topNavigation; //for creating object of TopNavigation
+	
 	
 	
 	public static void initConfiguration(){
@@ -72,6 +75,7 @@ if(Constants.browser.equals("firefox")){
 		driver.manage().window().maximize();
 	/*	driver.manage().timeouts().implicitlyWait(Constants.implicitwait, TimeUnit.SECONDS);
 		wait = new WebDriverWait()*/
+		topNavigation = new TopNavigation(driver); //object of TopNavigation
 		
 	
 	}

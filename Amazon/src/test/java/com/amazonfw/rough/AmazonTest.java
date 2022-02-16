@@ -10,8 +10,6 @@ public class AmazonTest {
 		BasePage.initConfiguration();
 		HomePage home = new HomePage();
 		home.gotoSignIn();
-		
-			
 		System.out.println("done");
 		BasePage.quitBrowser();
 	}
