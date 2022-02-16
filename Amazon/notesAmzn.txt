@@ -94,7 +94,59 @@ passing driver instance and this class instance
 public class HomePage extends BasePage //extends BasePage to get the driver instance from BasePage to HoomePage
 AmazonTest.java & HomePage.java, HomePageLocators.java executed >> Run as Java Application
 
-
+	System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"src\\test\\resources\\executables\\chromedriver.exe");
+	WebDriver driver =  new ChromeDriver();
+	driver.get("https://www.amazon.com/");
+	System.out.println("hello");
+	}
+above code in AmazonTest.java changed to 
+	
+		BasePage.initConfiguration();
+		HomePage home = new HomePage();
+		home.gotoSignIn();			
+		System.out.println("done");
+		BasePage.quitBrowser();
 ---------------------------------------------------------------------------
 lec 111
+		AjaxElementLocatorFactory factory = new AjaxElementLocatorFactory(driver,10); //a lazy load concept in PF design to identify webeelements only when they are in any oprerations
+		once the elemnt is found it will comeout of that time- wont wait to timeout.
 		
+		AjaxElementLocatorFactory factory = new AjaxElementLocatorFactory(driver,10); //constructor with parameters - driver and time in secs
+		PageFactory.initElements(factory, this.home); //pass the reference factory
+		
+		hellolocation, returns&Orders
+		
+=-------------------------------------------------------------------------------
+lec 113
+If there is a top Menu in the applicaiton which is available from all the page in the application then make that menu as common utiltiy.
+ Create a class TopMenu in base epackage. >> project3
+ 
+TopMenu ISA Page???  NO >> so no inheritance no extends Page
+HomePage HASA TopMenu
+AccountPage HASA TopMenu
+so every page HASA TopMenu >> Page HASA TopMenu  - encapsulation
+
+here TopMenu is not in base pkg		---in Page
+
+Create a TopNavigation class and TopNavigationLocators class
+object of TopNavogationLocators in constructor of TopNavigation class
+
+TopMenu ISA Page???  NO >> so no inheritance no extends Page
+every page HASA TopMenu >> Page HASA TopMenu  - encapsulation
+in basePage.java class
+public static TopNavigation topNavigation; //for creating object of TopNavigation
+in initConfiguration object is created >> 	topNavigation = new TopNavigation(); //object of TopNavigation --driver to get driver in TopNavigation class
+
+Initconfiguartion- @9.00 lec 113 when the driver is initialized TopNavigation object is created, the constructor is called and this construcotr sets the PageFactoryInitelements and the topNavigationLocators object will be created,
+when PageFactoryinitelements are inintialized the leements are accessible using the topNavigationLocator object.
+
+
+o TopMenu can be implemented in every page class - encapsulated >> TopMenu topMenu = new TopMenu(); //then the methods with this object ref
+BUt instead of giving in all page classes it can be given in the SuperClass Page CLass. --static TopMenu menu
+In testclass>>  LoginTest class >> Page.menu..... >> Page & TopMenu are two classes in base pkg. -- menu- static TopMenu menu
+LoginTest class>> Page.menu.gotoAccounts(); //will look in TopMenu Page for gotoAccounts() mehtod
+
+-------------------------------------------------------------------
+
+TopNavogationLocators -- add locators
+TopNavigation- add methods 
