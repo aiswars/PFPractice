@@ -1,0 +1,67 @@
+maven project
+=-----------------
+pom.xml dependencies
+----------------------
+notesAmzn.txt
+--------------------------
+pageobject model
+---------------------------
+packages in src/main/java
+base
+errorcollectors
+liusteners
+pages.actions
+pages.locators
+utitlities
+
+--------------------------
+packages in src/test/java
+rough
+testcases
+
+--------------------------
+folders in src/test/resources
+excel
+executables
+extentconfig
+logs
+properties
+runner
+
+--------------------------
+to do :
+testNgxml 
+<testresources> in pom.xml
+-----------------------------------
+
+get the locators from amazon website pages to a rough page 
+
+verifying the css on console>>  $$('cssSelector') ---  $$('#ap_password') if length 1 then only one element
+css>>  a[id='nav-orders'] span[class='nav-line-1'] >>>  $$('a[id="nav-orders"] span[class="nav-line-1"]')
+
+verifying xpath on console - &x("xpath") or  &x('xpath')  //x loweerCase
+	$x("//input[@id='signInSubmit']")  //worked
+	$x('//input[@id="signInSubmit"]') //worked
+	
+	$x('//input[@id='signInSubmit']') //wont work
+	$x('//input[@id='signInSubmit']') //wont work
+	
+	-----------------------------------------------
+	
+HomePage.java >> methods for the navigayions from the home page
+psvm main class in rough package
+driver, get site, get locator/actins from HomePage by importing HomePage and HomePage Object
+OR by PageFactory initelements // initializing the eleements by PageFactory class passing driver instance and this class instance
+
+
+	//System.setProperty("webdriver.chrome.driver", "C:\\Users\\Aiswa\\eclipse-workspaceN\\BankUsers\\Drivers\\chromedriver.exe");
+    System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\src\\test\\resources\\executables\\chromedriver.exe");
+	WebDriver driver =  new ChromeDriver();
+	driver.get("https://www.amazon.com/");
+	
+	ctrl shift O to import packages
+
+AmazonTest.java & HomePage.java executed >> Run as Java Application
+============================================================================================
+	
+

@@ -1,0 +1,38 @@
+	
+	
+	//HomePage home = new HomePage();
+	HomePage home = PageFactory.initElements(driver, HomePage.class);
+
+	home.gotoSignIn();
+
+		
+	
+	
+	
+	@FindBy(how = How.XPATH, using ="/html/body/div[3]/div/ul/li[2]/a")
+	@CacheLookup
+	WebElement lnkAddNewCustomer;
+
+			
+	@FindBy()		
+   @FindBy(xpath = "//*[starts-with(@id,'tab-flight-tab')]")
+	public WebElement flightTab;
+	
+	//Home page
+	
+	select your address css #glow-ingress-line2   >>  zip code css #GLUXZipUpdateInput, apply button css  input[aria-labelledby='GLUXZipUpdate-announce']
+	done button css button[name='glowDoneButton']
+	signin css   #nav-link-accountList-nav-line-1
+	returns css  a[id='nav-orders'] span[class='nav-line-1']
+	
+	topmenu bar
+	All button link    css= .hm-icon-label
+	
+	
+	//signin page
+	email css #ap_email
+	continue button xpath   //input[@id='continue']
+	password css  #ap_password
+	signin button signInSubmit
+	
+	
