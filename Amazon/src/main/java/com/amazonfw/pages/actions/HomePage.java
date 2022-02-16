@@ -3,16 +3,25 @@ package com.amazonfw.pages.actions;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
 
-public class HomePage {
+import com.amazonfw.base.BasePage;
+import com.amazonfw.pages.locators.HomePageLocators;
 
-	@FindBy(how = How.CSS, using = " #nav-link-accountList" )
-	WebElement lnkSignIn;
-	@FindBy(how = How.CSS, using = "div[id='nav-flyout-ya-signin'] span[class='nav-action-inner']" )
-	WebElement btnSignIn;
+public class HomePage extends BasePage {
+
+public HomePageLocators home;
+	
+
+	public HomePage(){
+		
+		this.home = new HomePageLocators();
+		PageFactory.initElements(driver, this.home);
+		
+	}
+	
 	public void gotoSignIn() {
-		lnkSignIn.click();
-	//	btnSignIn.click();
+	home.lnkSignIn.click();
 	}
 	public void gotoHelloLocation() {
 			

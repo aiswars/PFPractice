@@ -47,7 +47,7 @@ verifying xpath on console - &x("xpath") or  &x('xpath')  //x loweerCase
 	$x('//input[@id='signInSubmit']') //wont work
 	
 	-----------------------------------------------
-	
+	lec 109
 HomePage.java >> methods for the navigayions from the home page
 psvm main class in rough package
 driver, get site, get locator/actins from HomePage by importing HomePage and HomePage Object
@@ -63,5 +63,38 @@ OR by PageFactory initelements // initializing the eleements by PageFactory clas
 
 AmazonTest.java & HomePage.java executed >> Run as Java Application
 ============================================================================================
-	
+	lec 110
+copied the initialization from project3 page.java baseclass
 
+also in this project initialization are not doing in the constructor of  base class - page.java constructor
+instead its in a method initConfiguartion in Page.java baseclass
+each test is independent - its not navogating from one page to another. testing one page then closing the browser and then in next test opening next page and testing it and closing it-
+in project3 initialization is in page.java baseclass constructor and tests are not indepenedent.naviagting from one page to another
+
+
+-----------------------------------------------------------
+constants.java
+BasePage.java
+import apache log4j
+testdata.xls >> excel file -testdata.xls to excel - - in src/test/reso
+excelReader >> copied updtaed excelReader.java to utilities - in main/java
+ExtentManager >> copied updated ExtentManager.java to utilties  in main/java sec 13 and sec 15 are same
+reportsCOnfig >> copied reportsCOnfig.java to extenCOnfig for the extentreports - in src/test/reso
+log4j.properties >> copied updtaed log4j.properties to properties- in src/test/reso
+Utilities.java >> created a new class Utilities.java in utiltities pkg in main/java
+ExtentListeners.java >> copied to listeners pkg - in src/main/java
+
+ExtentManager.java >> chnaged the name and details to display
+in pagefactory implementation of wait is different
+
+--------------------------------------------------------------
+HomePageLocators.java >> separated the locators to this class
+and in HomePage.java - its constructor is created and in constructor initalize the PageFactory -- // initializing the eleements by PageFactory class 
+passing driver instance and this class instance
+public class HomePage extends BasePage //extends BasePage to get the driver instance from BasePage to HoomePage
+AmazonTest.java & HomePage.java, HomePageLocators.java executed >> Run as Java Application
+
+
+---------------------------------------------------------------------------
+lec 111
+		
