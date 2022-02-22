@@ -201,6 +201,7 @@ Run As TestNg Suite - no errors - both tests run successfully
 Refresh testuotput folder to check the reports - check >> index.html and emailablereport.html in testoutput folder
 also testwise html files in Suite folder - AmazonSuiteFolder/HomeSearchTest.html and SigninTest.html
 -----------------------------------------------------------------------------------------------------
+
  Need to add the listeners 
  
  <listeners>
@@ -217,11 +218,67 @@ added
 		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 		
 Run As TestNg Suite - no errors - both tests run successfully
-Refresh testuotput folder to check the reports - html folder added- check >> index.html in html folder
+Refresh tesoutput folder to check the reports - html folder added- check >> index.html in html folder
   
 added scrrenshots(manually created and added to understand)of the reports in rough pkg >>rough/file/...
 
 ----------------------------------------------------------------------
 lec 115
 
+@FindBy
+	@FindBys - 
+	@FindAll
+	
+	@FindBys({
+		@FindBy(css = ".cols-nested.flight-date-fieldset.total-children-2"), //first locate this block/part/section then locate below element in this part
+		@FindBy(id = "flight-age-select-1") //look in above section not the entire page
+	})
+	public WebElement firstAge;
+	@FindAll({
+		@FindBy(css = "#flight-age-select-222"), //locate either this
+		@FindBy(id = "flight-age-select-2")//OR locate this if above cant be located
+	})
+
+
+
+
+if asserts fails, the execution in that method will be terminated and go to next method
+so it will fail to report if multiple failures are there in that method as it wont execute the rest of the code from the first failure.
+so to add/check muliple failures use softAsseetions. this wont terminsate the execuiton , it will show the failure and will be added to the repaorts as well.
+SoftAssertions are assertions in trycatcg blck. so if a failure happens instead of throwing the error and terminating the execution the erroe is caught in catch block with userdfeined codes it is handled- so the execution continues and multiple failures can be handled this way.
+each assert condition are in each verify methods with try catch - this is in a separate utility class file then this integrated witht testNg.
+added in src/main/java/errorcollectors pkg
+SoftAsseetions can be integrated with testng listeners.
+TestListenerAdapter - IInvokedMethodListener is the interfcae
+ErrorCollector.java and TestListenerAdapter.java classes in ErrorCollectors pkg
+add this classname in testng xml file in <listeners> tag -- 	<listener class-name="com.w2a.errorcollectors.TestListenerAdapter" />
+addVerificationFailure() - a method in ErrorCollector.java class --using List interface
+
+softAssertions using listeners in  lect 115 -check lect 18 in proj1
+
+-----------------------------------------
+lec 115 
+sotAssertions userdefined class-- errorcollectors pkg
+utility methods for softassertions >>errorcollectors pkg - for softAssertions -added in src/main/java/errorcollectors pkg.
+this is a listener - to invoke this listener need to call errorcollector class in listeners in testng xml file
+errorcollector class listen to the test and once error is occured it will add to the reports without breaking the execution.
+
+change the package name -- com.w2a.errorcollectors;
+
+
+--------------------------------------------------------
+Reports >> manually added in rough pkg - to understand and learn
+1. testngxml >>> 
+Run As TestNg Suite - no errors - both tests run successfully
+Refresh testuotput folder to check the reports - check >> index.html and emailablereport.html in testoutput folder
+also testwise html files in Suite folder - AmazonSuiteFolder/HomeSearchTest.html and SigninTest.html
+
+2. listeners added - HTMLReporter class
+<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+		
+Run As TestNg Suite - no errors - both tests run successfully
+Refresh tesoutput folder to check the reports - html folder added- check >> index.html in html folder
+  
+added scrrenshots(manually created and added to understand)of the reports in rough pkg >>rough/file/...
 
